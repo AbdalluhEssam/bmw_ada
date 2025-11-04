@@ -6,6 +6,9 @@ class AppAssets {
   static const String onboardingBackImage1 = '$path/on1-back.png';
   static const String authImage = '$path/auth.png';
   static const String authBackImage = '$path/auth-back.png';
+  static const String honeyImage = '$path/honey.png';
+  static const String bestImage = '$path/best.png';
+  static const String berryImage = '$path/berry.png';
 
 
   // Icons path SVG
