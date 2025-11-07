@@ -1,7 +1,5 @@
 import 'dart:developer';
-
 import 'package:bmw/core/constants/app_assets.dart';
-import 'package:bmw/core/theme/app_colors.dart';
 import 'package:bmw/features/home/data/repo/product_data.dart';
 import 'package:bmw/features/home/ui/widgets/custom_card_product.dart';
 import 'package:bmw/features/home/ui/widgets/custom_category.dart';

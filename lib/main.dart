@@ -1,3 +1,4 @@
+import 'package:bmw/features/State_Management/ui/state_management.dart';
 import 'package:bmw/features/auth/ui/login.dart';
 import 'package:bmw/features/onboarding/ui/onboarding_screen.dart';
 import 'package:bmw/features/splash/ui/splash_screen.dart';
@@ -26,6 +27,7 @@ class BMWApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: 'Brandon_Grotesque',
       ),
+      // home: StateManagement(),
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashScreen(),
