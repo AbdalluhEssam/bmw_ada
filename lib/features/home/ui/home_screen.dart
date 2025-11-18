@@ -1,10 +1,13 @@
 import 'dart:developer';
+import 'dart:io';
 import 'package:bmw/core/constants/app_assets.dart';
 import 'package:bmw/features/home/data/repo/product_data.dart';
 import 'package:bmw/features/home/ui/widgets/custom_card_product.dart';
 import 'package:bmw/features/home/ui/widgets/custom_category.dart';
 import 'package:bmw/features/home/ui/widgets/custom_roc_card.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/widgets/custom_text_form_field.dart';
 
@@ -31,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: EdgeInsets.all(24.0.r),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -58,24 +61,39 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             'My basket',
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 10.sp,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                         ],
                       ),
-                      padding: EdgeInsets.symmetric(vertical: 4, horizontal: 0),
+                      padding: EdgeInsets.symmetric(
+                        vertical: 4.h,
+                        horizontal: 0.w,
+                      ),
                     ),
                   ],
                 ),
+                Platform.isIOS
+                    ? CupertinoButton(
+                      onPressed: () {},
+                      child: Icon(Icons.notifications, size: 28.sp),
+                    )
+                    : IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.notifications, size: 28.sp),
+                    ),
                 SizedBox(height: 20),
                 Text(
                   'Hello ${args['name'] ?? 'Guest'}, What fruit salad\ncombo do you want today?',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 24),
+                  padding: EdgeInsets.symmetric(vertical: 24.h),
                   child: Row(
                     children: [
                       Expanded(
@@ -123,14 +141,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 40),
+                30.verticalSpace,
 
                 SizedBox(
-                  height: 50,
+                  height: 40.h,
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemCount: categories.length,
-                    separatorBuilder: (context, index) => SizedBox(width: 16),
+                    separatorBuilder: (context, index) => 16.horizontalSpace,
                     itemBuilder:
                         (context, index) => GestureDetector(
                           onTap: () {
@@ -145,9 +163,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                   ),
                 ),
-                SizedBox(height: 24),
+                16.verticalSpace,
                 SizedBox(
-                  height: 175,
+                  height: 150.h,
                   child: ListView.separated(
                     clipBehavior: Clip.none,
                     scrollDirection: Axis.horizontal,

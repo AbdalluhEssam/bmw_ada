@@ -1,10 +1,12 @@
-import 'package:bmw/features/State_Management/ui/state_management.dart';
-import 'package:bmw/features/auth/ui/login.dart';
-import 'package:bmw/features/onboarding/ui/onboarding_screen.dart';
-import 'package:bmw/features/splash/ui/splash_screen.dart';
+import 'package:bmw/features/responsive_adaptive/adaptive_screen.dart';
+import 'package:bmw/features/responsive_adaptive/responsive_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'features/auth/ui/login.dart';
 import 'features/home/ui/home_screen.dart';
+import 'features/onboarding/ui/onboarding_screen.dart';
+import 'features/splash/ui/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,22 +21,29 @@ class BMWApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "ADA APP",
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        primarySwatch: Colors.blue,
-        fontFamily: 'Brandon_Grotesque',
+
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) => MaterialApp(
+        title: "ADA APP",
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+          primarySwatch: Colors.blue,
+          fontFamily: 'Brandon_Grotesque',
+        ),
+        // home: child!,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const SplashScreen(),
+          '/login': (context) => const LoginScreen(),
+          '/onboarding': (context) => const OnboardingScreen(),
+          '/home': (context) => const HomeScreen(),
+        },
       ),
-      // home: StateManagement(),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const SplashScreen(),
-        '/login': (context) => const LoginScreen(),
-        '/onboarding': (context) => const OnboardingScreen(),
-        '/home': (context) => const HomeScreen(),
-      },
+      // child: ResponsiveScreen(),
     );
   }
 }
