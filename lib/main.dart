@@ -1,3 +1,6 @@
+import 'package:bmw/features/advanced_ui/animate_dos.dart';
+import 'package:bmw/features/advanced_ui/custom_scroll_view.dart';
+import 'package:bmw/features/advanced_ui/test_widgets.dart';
 import 'package:bmw/features/responsive_adaptive/adaptive_screen.dart';
 import 'package:bmw/features/responsive_adaptive/responsive_screen.dart';
 import 'package:flutter/material.dart';
@@ -34,14 +37,14 @@ class BMWApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           fontFamily: 'Brandon_Grotesque',
         ),
-        // home: child!,
-        initialRoute: '/',
-        routes: {
-          '/': (context) => const SplashScreen(),
-          '/login': (context) => const LoginScreen(),
-          '/onboarding': (context) => const OnboardingScreen(),
-          '/home': (context) => const HomeScreen(),
-        },
+        home: AnimateDos(),
+        // initialRoute: '/',
+        // routes: {
+        //   '/': (context) => const SplashScreen(),
+        //   '/login': (context) => const LoginScreen(),
+        //   '/onboarding': (context) => const OnboardingScreen(),
+        //   '/home': (context) => const HomeScreen(),
+        // },
       ),
       // child: ResponsiveScreen(),
     );

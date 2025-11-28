@@ -1,4 +1,3 @@
-
 import 'package:bmw/features/home/ui/cubit/fav_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,16 +16,17 @@ class CustomRocCard extends StatelessWidget {
     return BlocProvider(
       create: (context) => FavCubit(),
       child: Container(
+
         decoration: BoxDecoration(
-          color: AppColors.white,
+          color: AppColors.primaryColor.withOpacity(0.1),
           borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
-              blurRadius: 2,
-              offset: Offset(0, 3),
-            ),
-          ],
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: Colors.grey.withOpacity(0.2),
+          //     blurRadius: 2,
+          //     offset: Offset(0, 3),
+          //   ),
+          // ],
         ),
 
         child: Stack(
