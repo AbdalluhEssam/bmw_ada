@@ -5,6 +5,7 @@ import 'package:bmw/features/home/data/repo/product_data.dart';
 import 'package:bmw/features/home/ui/widgets/custom_card_product.dart';
 import 'package:bmw/features/home/ui/widgets/custom_category.dart';
 import 'package:bmw/features/home/ui/widgets/custom_roc_card.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,6 +21,18 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
+   late  String fcmToken ;
+
+   @override
+  void initState(){
+     getToken();
+    super.initState();
+  }
+
+  void getToken() async {
+    fcmToken = (await FirebaseMessaging.instance.getToken())!;
+    log("FCM Token: $fcmToken");
+  }
 
   List<String> categories = ["Hottest", "Popular", "New combo", "Top"];
 

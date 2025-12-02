@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDRRTtCTVcTY0_6Sf9DKolZ_CWgRmhQnFE</string>
+	<string>AIzaSyAtlJU9C9oXsJh5H5uJwuMysllxyEDzeyk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>151515240789</string>
+	<string>203996122774</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.ada.bmw</string>
 	<key>PROJECT_ID</key>
-	<string>maga-8cb89</string>
+	<string>ada-bmw</string>
 	<key>STORAGE_BUCKET</key>
-	<string>maga-8cb89.firebasestorage.app</string>
+	<string>ada-bmw.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,8 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:151515240789:ios:9d9c336ef710be410977dc</string>
-	<key>DATABASE_URL</key>
-	<string>https://maga-8cb89-default-rtdb.firebaseio.com</string>
+	<string>1:203996122774:ios:506006f96cf689c873fcb7</string>
 </dict>
 </plist>
